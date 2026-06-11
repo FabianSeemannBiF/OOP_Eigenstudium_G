@@ -5,8 +5,30 @@
 #ifndef OOP_EIGENSTUDIUM_G_GAMEWORLD_H
 #define OOP_EIGENSTUDIUM_G_GAMEWORLD_H
 
+enum FieldType {
+    EMPTY,
+    DANGER,
+    WELL,
+    RELIC
+};
 
 class GameWorld {
+public:
+    //Constructor and Deconstructor
+    GameWorld();
+    ~GameWorld();
+
+    //Step 1 - Functions:
+    void initGameWorld();
+    FieldType getField(int x, int y) const;
+    void setField(int x, int y);
+    int getBoardRelics() const;
+    void printBoard(int playerX, int playerY) const;
+
+private:
+    int board[5][5]{};
+    int x{}, y{};
+    int relics = 0;
 };
 
 
