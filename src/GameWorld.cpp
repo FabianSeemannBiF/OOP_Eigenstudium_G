@@ -64,7 +64,7 @@ GameWorld::~GameWorld() = default;
 
 void GameWorld::setField(int x, int y) {
     if (x >= 0 && x < 5 && y >= 0 && y < 5) {
-        this->board[x][y] = FieldType::EMPTY;
+        this->board[y][x] = FieldType::EMPTY;
     }
 }
 
@@ -72,7 +72,7 @@ FieldType GameWorld::getField(int x, int y) const {
     if (x < 0 || x >= 5 || y < 0 || y >= 5) {
         return FieldType::EMPTY;
     }
-    return static_cast<FieldType>(this->board[x][y]);
+    return static_cast<FieldType>(this->board[y][x]);
 }
 
 int GameWorld::getBoardRelics() const {
@@ -80,7 +80,7 @@ int GameWorld::getBoardRelics() const {
 }
 
 void GameWorld::printBoard(const int playerX, const int playerY) const {
-    std::cout << "==========" << "OASENCRAWLER" << "===========" << std::endl;
+    std::cout << "================== OASISCRAWLER ==================" << std::endl;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
 
@@ -108,7 +108,7 @@ void GameWorld::printBoard(const int playerX, const int playerY) const {
         }
         std::cout << std::endl;
     }
-    std::cout << "==========" << std::endl;
+    std::cout << "==================================================" << std::endl;
 }
 
 /**

@@ -4,6 +4,7 @@
 
 #ifndef OOP_EIGENSTUDIUM_G_CHARACTER_H
 #define OOP_EIGENSTUDIUM_G_CHARACTER_H
+#include "GameWorld.h"
 
 
 class Character {
@@ -13,11 +14,15 @@ public:
     ~Character();
 
     //Step 1 - Functions:
-    void move(int x, int y);
-    void takeDamage(int damage);
+    void move(const char input, GameWorld *world);
     void setCharacterRelics(int relics);
-    int getCharacterRelics();
-    bool isDefeated();
+    int getCharacterRelics() const;
+    bool isDefeated() const;
+
+    //Getters
+    int getHealth() const;
+    int getPositionX() const;
+    int getPositionY() const;
 private:
     int health = 5;
     int relics = 0;
