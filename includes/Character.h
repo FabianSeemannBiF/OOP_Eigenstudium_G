@@ -4,6 +4,8 @@
 
 #ifndef OOP_EIGENSTUDIUM_G_CHARACTER_H
 #define OOP_EIGENSTUDIUM_G_CHARACTER_H
+#include <string>
+
 #include "GameWorld.h"
 
 
@@ -26,10 +28,21 @@ public:
 
     //Step 2 - Functions
     void resetPosition();
+
+    //Step 3 - Functions:
+    void findItem(AttributeType attributeType, const std::string &itemName);
+    bool useItemSlot(AttributeType attributeType);
+    int getAttributeValue(AttributeType attributeType) const;
 private:
     int health = 5;
     int relics = 0;
     int x = 0, y = 0;
+
+    //Step 3:
+    int strength, dexterity, wisdom;
+    bool hasItem;
+    AttributeType activeItemAttribute;
+    std::string itemName;
 };
 
 

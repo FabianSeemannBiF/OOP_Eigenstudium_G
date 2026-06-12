@@ -12,7 +12,7 @@
 int main() {
     srand(static_cast<unsigned int>(time(0)));
 
-    int difficulty = 1;
+    int difficulty = 5;
 
     GameWorld world;
     world.initGameWorld(difficulty);
@@ -31,6 +31,11 @@ int main() {
         std::cout << "Difficulty: " << difficulty << std::endl;
         std::cout << "Player Health: " << player.getHealth() << std::endl;
         std::cout << "Player Relics: " << player.getCharacterRelics() << std::endl;
+
+        std::cout << "Attributes:" << std::endl;
+        std::cout << player.getAttributeValue(STRENGTH) << std::endl;
+        std::cout << player.getAttributeValue(DEXTERITY) << std::endl;
+        std::cout << player.getAttributeValue(WISDOM) << std::endl;
 
         if (player.isDefeated()) {
             std::cout << "========== GAME OVER ==========" << std::endl;

@@ -12,6 +12,12 @@ enum FieldType {
     RELIC
 };
 
+enum AttributeType {
+    STRENGTH,
+    DEXTERITY,
+    WISDOM
+};
+
 class GameWorld {
 public:
     //Constructor and Deconstructor
@@ -24,7 +30,6 @@ public:
     void setField(int x, int y, FieldType field = FieldType::EMPTY);
     int getBoardRelics() const;
     void printBoard(int playerX, int playerY, int enemyX, int enemyY) const;
-
 private:
     int board[5][5]{};
     int x{}, y{};
