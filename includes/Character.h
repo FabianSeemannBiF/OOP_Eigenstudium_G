@@ -23,6 +23,9 @@ public:
     int getHealth() const;
     int getPositionX() const;
     int getPositionY() const;
+
+    //Step 2 - Functions
+    void resetPosition();
 private:
     int health = 5;
     int relics = 0;

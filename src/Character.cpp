@@ -47,8 +47,9 @@ void Character::move(const char input, GameWorld *world) {
             break;
     }
 
-    if (moveX < 0 || moveX > 5 || moveY < 0 || moveY > 5) {
+    if (moveX < 0 || moveX >= 5 || moveY < 0 || moveY >= 5) {
         std::cout << "Character::move(): Invalid input! Cannot leave designated area" << std::endl;
+        return;
     }
 
     this->x = moveX;
@@ -109,4 +110,15 @@ int Character::getPositionX() const {
 
 int Character::getPositionY() const {
     return this->y;
+}
+
+/**
+ * ==================================================
+ * STEP 2: Enemy hunting the player
+ * ==================================================
+ */
+
+void Character::resetPosition() {
+    this->x = 0;
+    this->y = 0;
 }

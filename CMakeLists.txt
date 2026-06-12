@@ -11,4 +11,6 @@ add_executable(OOP_Eigenstudium_G
         src/Character.cpp
         src/GameWorld.cpp
         main.cpp
+        includes/Enemy.h
+        src/Enemy.cpp
 )

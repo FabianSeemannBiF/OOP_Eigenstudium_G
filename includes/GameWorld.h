@@ -19,11 +19,11 @@ public:
     ~GameWorld();
 
     //Step 1 - Functions:
-    void initGameWorld();
+    void initGameWorld(int difficulty = 1);
     FieldType getField(int x, int y) const;
-    void setField(int x, int y);
+    void setField(int x, int y, FieldType field = FieldType::EMPTY);
     int getBoardRelics() const;
-    void printBoard(int playerX, int playerY) const;
+    void printBoard(int playerX, int playerY, int enemyX, int enemyY) const;
 
 private:
     int board[5][5]{};
